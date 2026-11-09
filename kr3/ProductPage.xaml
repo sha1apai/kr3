@@ -1,0 +1,75 @@
+﻿<Page x:Class="kr3.ProductPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:kr3"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="1200" FontFamily="Calibri"
+      Title="ProductPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+            <ComboBox Name="ComboSort" SelectionChanged="ComboSort_SelectionChanged" Width="250" Height="30" FontSize="17">
+                <TextBlock>Сортировка по умолчанию</TextBlock>
+                <TextBlock>По возрастанию цены</TextBlock>
+                <TextBlock>По убыванию цены</TextBlock>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" >
+            <ComboBox Name="ComboType" SelectionChanged="ComboType_SelectionChanged" Width="250" Margin="15" Height="30" FontSize="17" >
+                <TextBlock>Фильтр по умолчанию</TextBlock>
+                <TextBlock>Женская обувь</TextBlock>
+                <TextBlock>Мужская обвуь</TextBlock>
+                <TextBlock>Детская обувь</TextBlock>
+            </ComboBox>
+        </StackPanel>
+        <TextBox Name="TBSearch" TextChanged="TBSearch_TextChanged" Grid.Row="0" HorizontalAlignment="Left" FontSize="17" Margin="15" Width="250" Height="30" />
+        <StackPanel Grid.Column="1" Margin="280,0,0,0">
+            <TextBlock Name="FIOTB" FontSize="15"></TextBlock>
+            <WrapPanel>
+                <TextBlock Text="Вы авторизованы как: " FontSize="15"></TextBlock>
+                <TextBlock Name="RoleTB" FontSize="15"></TextBlock>
+            </WrapPanel>
+        </StackPanel>
+        <ListBox Grid.Row="1" Name="ProductsListView">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="300"></ColumnDefinition>
+                            <ColumnDefinition Width="650"></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <WrapPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center">
+                            <TextBlock Text="{Binding Manufactury}" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" FontSize="20" TextWrapping="Wrap"></TextBlock>
+                            <TextBlock Text=" | " FontSize="20"></TextBlock>
+                            <TextBlock Text="{Binding ProductName}" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" FontSize="20" TextWrapping="Wrap"></TextBlock>
+                        </WrapPanel>
+
+                        <TextBlock Text="{Binding Category.CategoryName, StringFormat=Категория: {0}}" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" FontSize="20" ></TextBlock>
+                        <TextBlock Text="{Binding TotalQuantity, StringFormat=В наличии: {0} шт.}" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" FontSize="20" TextWrapping="Wrap"></TextBlock>
+                        <TextBlock Text="{Binding Price, StringFormat={}{0:0} рублей}" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" FontSize="20" ></TextBlock>
+                        <TextBlock Text="{Binding Composition, StringFormat=Состав: {0}}" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" FontSize="20" TextWrapping="Wrap"></TextBlock>
+                        <Image Grid.RowSpan="6">
+                            <Image.Source>
+                                <Binding Path="ImagePath"></Binding>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Page>

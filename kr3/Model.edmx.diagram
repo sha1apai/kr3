@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="acbd52f9f26f4bb8868f8571d47e6cc0" Name="Diagram1">
+        <EntityTypeShape EntityType="kr_chudo_obuvModel.Category" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="kr_chudo_obuvModel.OrderItems" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="kr_chudo_obuvModel.Orders" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="kr_chudo_obuvModel.Products" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="kr_chudo_obuvModel.Roles" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="kr_chudo_obuvModel.Sizes" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="kr_chudo_obuvModel.Stock" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="kr_chudo_obuvModel.SubCategory" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="kr_chudo_obuvModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kr_chudo_obuvModel.Users" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <AssociationConnector Association="kr_chudo_obuvModel.FK_Products_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="kr_chudo_obuvModel.FK_OrderItems_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="kr_chudo_obuvModel.FK_OrderItems_Stock" ManuallyRouted="false" />
+        <AssociationConnector Association="kr_chudo_obuvModel.FK_Orders_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="kr_chudo_obuvModel.FK_Products_SubCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="kr_chudo_obuvModel.FK_Stock_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="kr_chudo_obuvModel.FK_Users_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="kr_chudo_obuvModel.FK_Stock_Sizes" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
